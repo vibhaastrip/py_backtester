@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from src.base_strategy import BaseStrategy
+from strategies.base_strategy import BaseStrategy
 
 class MovingAverageCrossStrategy(BaseStrategy):
     def __init__(self,short_window=50, long_window=200, name="MA Crossover"):
@@ -14,7 +14,7 @@ class MovingAverageCrossStrategy(BaseStrategy):
         df = data.copy()
 
         df['short_ma'] = df['close'].rolling(window=self.short_window).mean()
-        df['long_ma'] = df['close'].rolling(window-self.long_window).mean()
+        df['long_ma'] = df['close'].rolling(window=self.long_window).mean()
 
         df['signal'] = 0
 
