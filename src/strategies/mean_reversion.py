@@ -3,7 +3,7 @@ import numpy as np
 from strategies.base_strategy import BaseStrategy
 
 class BollingerMeanReversionStrategy(BaseStrategy):
-    def __init__(self, window-20, num_std_dev-2, name-'Bollinger Mean Reversion'):
+    def __init__(self, window=20, num_std_dev=2, name='Bollinger Mean Reversion'):
         super().__init__(name)
         self.window = window
         self.num_std_dev = num_std_dev
